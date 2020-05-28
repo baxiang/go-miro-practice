@@ -8,6 +8,7 @@ require (
 	github.com/gin-contrib/zap v0.0.1
 	github.com/gin-gonic/gin v1.6.3
 	github.com/golang/protobuf v1.4.2
+	github.com/google/subcommands v1.2.0 // indirect
 	github.com/google/wire v0.4.0
 	github.com/grpc-ecosystem/go-grpc-middleware v1.2.0
 	github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0
@@ -22,6 +23,7 @@ require (
 	github.com/uber/jaeger-client-go v2.23.1+incompatible
 	github.com/uber/jaeger-lib v2.2.0+incompatible
 	go.uber.org/zap v1.15.0
+	golang.org/x/tools v0.0.0-20200527183253-8e7acdbce89d // indirect
 	google.golang.org/grpc v1.29.1
 	gopkg.in/natefinch/lumberjack.v2 v2.0.0
 )

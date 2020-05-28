@@ -11,7 +11,6 @@ import (
 
 )
 
-
 var ProviderSet = wire.NewSet(NewDatabase,NewOptions)
 
 type Options struct {
@@ -20,16 +19,18 @@ type Options struct {
 }
 
 func NewOptions(v *viper.Viper, logger *zap.Logger) (*Options, error) {
-   o :=&Options{}
-   var err  error
-   if err =v.UnmarshalKey("db",o);err!=nil{
-   	 return nil,errors.Wrap(err,"unmarshal db option error")
-   }
+	var err error
+	o := new(Options)
+	if err = v.UnmarshalKey("db", o); err != nil {
+		return nil, errors.Wrap(err, "unmarshal db option error")
+	}
+
 	logger.Info("load database options success", zap.String("url", o.URL))
+
 	return o, err
 }
 
-func NewDatabase(o Options)(*gorm.DB,error){
+func NewDatabase(o *Options)(*gorm.DB,error){
 	var err error
 	db, err := gorm.Open("mysql", o.URL)
 	if err!=nil{

@@ -34,6 +34,5 @@ func (pc *ReviewsController) Query(c *gin.Context) {
 		c.String(http.StatusInternalServerError,"%+v", err)
 		return
 	}
-
 	c.JSON(http.StatusOK, rs)
 }

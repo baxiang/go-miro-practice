@@ -9,7 +9,7 @@ import (
 	"github.com/google/wire"
 )
 
-var resProviderSet = wire.NewSet(
+var RepositoryProviderSet = wire.NewSet(
 	log.ProviderSet,
 	config.ProviderSet,
 	database.ProviderSet,
@@ -17,5 +17,5 @@ var resProviderSet = wire.NewSet(
 )
 
 func CreateReviewRepository(f string) (ReviewsRepository, error) {
-	panic(wire.Build(resProviderSet))
+	panic(wire.Build(RepositoryProviderSet))
 }
