@@ -1,13 +1,14 @@
 package database
 
 import (
+	"github.com/baxiang/go-miro-practice/internal/pkg/models"
 	"github.com/google/wire"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"github.com/pkg/errors"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
-	"github.com/baxiang/go-miro-practice/internal/pkg/models"
+
 )
 
 

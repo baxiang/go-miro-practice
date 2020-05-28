@@ -1,4 +1,4 @@
-module github.com/baxiang/go-note/go-miro-practice
+module github.com/baxiang/go-miro-practice
 
 go 1.13
 

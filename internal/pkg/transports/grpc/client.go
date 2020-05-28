@@ -1,7 +1,7 @@
 package grpc
 
 import (
-	"github.com/baxiang/go-note/go-miro-practice/internal/pkg/consul"
+	"github.com/baxiang/go-miro-practice/internal/pkg/consul"
 	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
 	grpc_prometheus "github.com/grpc-ecosystem/go-grpc-prometheus"
 	"github.com/grpc-ecosystem/grpc-opentracing/go/otgrpc"

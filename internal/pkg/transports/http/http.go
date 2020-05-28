@@ -1,8 +1,8 @@
 package http
 
 import (
-	"github.com/baxiang/go-note/go-miro-practice/internal/pkg/transports/http/middlewares"
-	"github.com/baxiang/go-note/go-miro-practice/internal/pkg/utils/netutil"
+	"github.com/baxiang/go-miro-practice/internal/pkg/transports/http/middlewares"
+	"github.com/baxiang/go-miro-practice/internal/pkg/utils/netutil"
 	"github.com/google/wire"
 	consulApi "github.com/hashicorp/consul/api"
 	"github.com/opentracing/opentracing-go"
