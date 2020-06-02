@@ -1,13 +1,12 @@
-package details
+package products
 
 import (
 	"github.com/baxiang/go-miro-practice/internal/pkg/app"
-	"github.com/baxiang/go-miro-practice/internal/pkg/transports/grpc"
 	"github.com/baxiang/go-miro-practice/internal/pkg/transports/http"
 	"github.com/google/wire"
 	"github.com/spf13/viper"
-	"github.com/pkg/errors"
 	"go.uber.org/zap"
+	"github.com/pkg/errors"
 )
 
 type Options struct {
@@ -26,9 +25,8 @@ func NewOptions(v *viper.Viper, logger *zap.Logger) (*Options, error) {
 	return o, err
 }
 
-func NewApp(o *Options, logger *zap.Logger, hs *http.Server, gs *grpc.Server) (*app.Application, error) {
-
-	a, err := app.NewApp(o.Name, logger, app.GrpcServerOption(gs), app.HttpServerOption(hs))
+func NewApp(o *Options, logger *zap.Logger, hs *http.Server) (*app.Application, error) {
+	a, err := app.NewApp(o.Name, logger, app.HttpServerOption(hs))
 
 	if err != nil {
 		return nil, errors.Wrap(err, "new app error")

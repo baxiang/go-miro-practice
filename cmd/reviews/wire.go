@@ -1,6 +1,9 @@
 package main
 
 import (
+	"github.com/baxiang/go-miro-practice/internal/app/reviews"
+	"github.com/baxiang/go-miro-practice/internal/app/reviews/controllers"
+	"github.com/baxiang/go-miro-practice/internal/app/reviews/grpcservers"
 	"github.com/baxiang/go-miro-practice/internal/app/reviews/repositories"
 	"github.com/baxiang/go-miro-practice/internal/app/reviews/services"
 	"github.com/baxiang/go-miro-practice/internal/pkg/app"
@@ -23,10 +26,10 @@ var providerSet = wire.NewSet(
 	jaeger.ProviderSet,
 	http.ProviderSet,
 	grpc.ProviderSet,
-	//reviews.ProviderSet,
+	reviews.ProviderSet,
 	repositories.ProviderSet,
-	//controllers.ProviderSet,
-	//grpcservers.ProviderSet,
+	controllers.ProviderSet,
+	grpcservers.ProviderSet,
 )
 
 func CreateApp(cf string) (*app.Application, error) {
