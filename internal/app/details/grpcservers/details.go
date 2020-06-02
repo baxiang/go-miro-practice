@@ -24,10 +24,12 @@ func NewDetailsServer(logger *zap.Logger, ps services.DetailsService) (*DetailsS
 func (s *DetailsServer) Get(ctx context.Context, req *proto.GetDetailRequest) (*proto.Detail, error) {
 	p, err := s.service.Get(req.Id)
 	if err != nil {
+		s.logger.Error(err.Error())
 		return nil, errors.Wrap(err, "details grpc service get detail error")
 	}
 	ct, err := ptypes.TimestampProto(p.CreatedTime)
 	if err != nil {
+		s.logger.Error(err.Error())
 		return nil, errors.Wrap(err, "convert create time error")
 	}
 

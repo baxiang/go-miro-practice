@@ -4,7 +4,7 @@ services:
     build:
       context: ..
       dockerfile: "build/details/Dockerfile"
-    command: ./wait-for db:3306 -t 30 -- ./app
+    #command: ./wait-for db:3306 -t 30 -- ./app
     depends_on:
       - db
       - consul
@@ -15,7 +15,7 @@ services:
     build:
       context: ..
       dockerfile: "build/ratings/Dockerfile"
-    command: ./wait-for db:3306 -t 30 -- ./app
+    #command: ./wait-for db:3306 -t 30 -- ./app
     depends_on:
       - db
       - consul
@@ -24,7 +24,7 @@ services:
     build:
       context: ..
       dockerfile: "build/reviews/Dockerfile"
-    command: ./wait-for db:3306 -t 30 -- ./app
+    #command: ./wait-for db:3306 -t 30 -- ./app
     depends_on:
       - db
       - consul
@@ -33,7 +33,7 @@ services:
     build:
       context: ..
       dockerfile: "build/products/Dockerfile"
-    command: ./wait-for db:3306 -t 30 -- ./app
+    #command: ./wait-for db:3306 -t 30 -- ./app
     depends_on:
       - db
       - consul

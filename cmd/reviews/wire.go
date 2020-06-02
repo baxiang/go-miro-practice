@@ -1,3 +1,5 @@
+//+build wireinject
+
 package main
 
 import (
@@ -18,8 +20,8 @@ import (
 )
 
 var providerSet = wire.NewSet(
-	log.ProviderSet,
 	config.ProviderSet,
+	log.ProviderSet,
 	database.ProviderSet,
 	services.ProviderSet,
 	consul.ProviderSet,

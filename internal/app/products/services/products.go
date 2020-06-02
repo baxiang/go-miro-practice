@@ -45,10 +45,10 @@ func (s *DefaultProductsService) Get(c context.Context, productID uint64) (p *mo
 			Id: productID,
 		}
 
-
 		pd, err := s.detailsSvc.Get(c, req)
 		if err != nil {
-			return nil, errors.Wrap(err, "get rating error")
+			s.logger.Error(err.Error())
+			return nil, errors.Wrap(err, "get details error")
 		}
 
 
@@ -88,7 +88,7 @@ func (s *DefaultProductsService) Get(c context.Context, productID uint64) (p *mo
 
 		resp, err := s.reviewsSvc.Query(c, req)
 		if err != nil {
-			return nil, errors.Wrap(err, "get rating error")
+			return nil, errors.Wrap(err, "get reviews error")
 		}
 
 		reviews = make([]*models.Review, 0, len(resp.Reviews))

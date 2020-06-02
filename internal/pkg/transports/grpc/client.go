@@ -4,6 +4,7 @@ import (
 	"github.com/baxiang/go-miro-practice/internal/pkg/consul"
 	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
 	grpc_prometheus "github.com/grpc-ecosystem/go-grpc-prometheus"
+	_ "github.com/mbobakov/grpc-consul-resolver" // It's important
 	"github.com/grpc-ecosystem/grpc-opentracing/go/otgrpc"
 	"github.com/opentracing/opentracing-go"
 	"github.com/pkg/errors"
